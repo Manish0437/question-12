@@ -4,6 +4,7 @@ import Loader from 'react-loader-spinner'
 import TeamCard from '../TeamCard'
 import './index.css'
 
+const teamsApiUrl = 'https://apis.ccbp.in/ipl'
 class Home extends Component {
   state = {
     teamsData: [],
@@ -16,7 +17,7 @@ class Home extends Component {
 
   getTeams = async () => {
     try {
-      const response = await fetch('https://apis.ccbp.in/ipl')
+      const response = await fetch(teamsApiUrl)
       if (!response.ok) {
         throw new Error('Failed to fetch teams data')
       }
